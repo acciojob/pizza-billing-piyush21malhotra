@@ -78,7 +78,7 @@ public class Pizza {
             System.out.println("Paperbag Added: 20");
         }
 
-        System.out.print("Total Price: ");
+        System.out.println("Total Price: " + this.bill);
         return this.bill;
     }
 }

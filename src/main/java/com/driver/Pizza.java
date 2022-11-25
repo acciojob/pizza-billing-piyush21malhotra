@@ -6,9 +6,20 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
+    private Boolean addExtraCheeseOneTime = false;
+    private Boolean addExtraToppingsOneTime = false;
+    private Boolean addTakeawayOneTime = false;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-        // your code goes here
+        if(this.isVeg) {
+            bill = "300";
+            price = 300;
+        }
+        else {
+            bill = "400";
+            price = 400;
+        }
     }
 
     public int getPrice(){
@@ -16,19 +27,58 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        // your code goes here
+        if(!addExtraCheeseOneTime) {
+            bill = Integer.toString((Integer.parseInt(bill) + 80));
+            addExtraCheeseOneTime = true;
+        }
     }
 
     public void addExtraToppings(){
-        // your code goes here
+
+        if(!addExtraToppingsOneTime) {
+            if (this.isVeg) {
+                bill = Integer.toString((Integer.parseInt(bill) + 70));
+            } else {
+                bill = Integer.toString((Integer.parseInt(bill) + 120));
+            }
+            addExtraToppingsOneTime = true;
+        }
     }
 
-    public void addTakeaway(){
-        // your code goes here
+    public void addTakeaway() {
+        if (!addTakeawayOneTime){
+            bill = Integer.toString((Integer.parseInt(bill) + 20));
+            addTakeawayOneTime = true;
+        }
     }
 
     public String getBill(){
-        // your code goes here
+
+        if(isVeg) {
+            System.out.print("Base Price Of The Pizza: 300\n");
+        }
+        else {
+            System.out.print("Base Price Of The Pizza: 400\n");
+        }
+
+        if(addExtraCheeseOneTime) {
+            System.out.print("Extra Cheese Added: 80\n");
+        }
+
+        if(addExtraToppingsOneTime) {
+            if(isVeg) {
+                System.out.print("Extra Toppings Added: 70\n");
+            }
+            else {
+                System.out.print("Extra Toppings Added: 120\n");
+            }
+        }
+
+        if(addTakeawayOneTime) {
+            System.out.print("Paperbag Added: 20\n");
+        }
+
+        System.out.print("Total Price: ");
         return this.bill;
     }
 }

@@ -52,7 +52,7 @@ public class Pizza {
         }
     }
 
-    public String getBill(){
+    public void getBill(){
 
         if(isVeg) {
             System.out.println("Base Price Of The Pizza: 300");
@@ -79,6 +79,6 @@ public class Pizza {
         }
 
         System.out.println("Total Price: " + this.bill);
-        return this.bill;
+        return;
     }
 }

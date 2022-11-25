@@ -55,27 +55,27 @@ public class Pizza {
     public String getBill(){
 
         if(isVeg) {
-            System.out.print("Base Price Of The Pizza: 300\n");
+            System.out.println("Base Price Of The Pizza: 300");
         }
         else {
-            System.out.print("Base Price Of The Pizza: 400\n");
+            System.out.println("Base Price Of The Pizza: 400");
         }
 
         if(addExtraCheeseOneTime) {
-            System.out.print("Extra Cheese Added: 80\n");
+            System.out.println("Extra Cheese Added: 80");
         }
 
         if(addExtraToppingsOneTime) {
             if(isVeg) {
-                System.out.print("Extra Toppings Added: 70\n");
+                System.out.println("Extra Toppings Added: 70");
             }
             else {
-                System.out.print("Extra Toppings Added: 120\n");
+                System.out.println("Extra Toppings Added: 120");
             }
         }
 
         if(addTakeawayOneTime) {
-            System.out.print("Paperbag Added: 20\n");
+            System.out.println("Paperbag Added: 20");
         }
 
         System.out.print("Total Price: ");
